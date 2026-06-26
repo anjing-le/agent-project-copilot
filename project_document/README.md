@@ -6,6 +6,7 @@
 
 - [ROADMAP.md](./ROADMAP.md)：项目定位、阶段规划、边界和成功标准。
 - [PROJECT_COPILOT_TEACHING_GUIDE.md](./PROJECT_COPILOT_TEACHING_GUIDE.md)：协作型 Agent 教学模块、演示路径和团队边界。
+- [SEVEN_AGENT_COURSE_BRAND_PLAN.md](./SEVEN_AGENT_COURSE_BRAND_PLAN.md)：七大 Agent 实战课的课程定位、项目矩阵、品牌方向和教学物料规划。
 - [PROJECT_CONSTRAINTS.md](./PROJECT_CONSTRAINTS.md)：项目长期约束、防破窗规则和脚本门禁清单。
 - [NEW_MODULE_GUIDE.md](./NEW_MODULE_GUIDE.md)：新增业务模块时的前后端契约、交付顺序和 AI Prompt 约束。
 - [SCAFFOLD_ADOPTION_PROMPT.md](./SCAFFOLD_ADOPTION_PROMPT.md)：把旧项目接入本母版时可复制给 Codex 的提示词。
