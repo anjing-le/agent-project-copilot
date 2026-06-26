@@ -4,7 +4,7 @@
 
 export const SERVICE_BOUNDARY_CONTRACT = {
   "schemaVersion": 1,
-  "applicationId": "infra-dev-scaffolding",
+  "applicationId": "agent-project-copilot",
   "apiPrefix": "/api",
   "boundaries": [
     {
@@ -12,7 +12,7 @@ export const SERVICE_BOUNDARY_CONTRACT = {
       "name": "Authentication",
       "kind": "runtime",
       "owner": "infra-auth",
-      "currentHost": "infra-dev-scaffolding",
+      "currentHost": "agent-project-copilot",
       "basePath": "/api/auth",
       "apiConstantsClass": "Auth",
       "apiPathsKey": "auth",
@@ -62,8 +62,8 @@ export const SERVICE_BOUNDARY_CONTRACT = {
       "id": "test",
       "name": "Scaffold Test",
       "kind": "sample",
-      "owner": "infra-dev-scaffolding",
-      "currentHost": "infra-dev-scaffolding",
+      "owner": "agent-project-copilot",
+      "currentHost": "agent-project-copilot",
       "basePath": "/api/test",
       "apiConstantsClass": "Test",
       "apiPathsKey": "test",
@@ -140,11 +140,25 @@ export const SERVICE_BOUNDARY_CONTRACT = {
       ]
     },
     {
+      "id": "project-copilot",
+      "name": "Project Delivery Copilot",
+      "kind": "runtime",
+      "owner": "agent-project-copilot",
+      "currentHost": "agent-project-copilot",
+      "basePath": "/api/project-copilot",
+      "apiConstantsClass": "ProjectCopilot",
+      "apiPathsKey": "projectCopilot",
+      "controller": "backend/src/main/java/com/anjing/projectcopilot/controller/ProjectCopilotController.java",
+      "openapi": true,
+      "copyAction": "keep as the teaching runtime boundary for project delivery collaboration agent APIs",
+      "routes": []
+    },
+    {
       "id": "common",
       "name": "Common Platform",
       "kind": "reserved-runtime",
       "owner": "infra-common",
-      "currentHost": "infra-dev-scaffolding",
+      "currentHost": "agent-project-copilot",
       "basePath": "/api/common",
       "apiConstantsClass": "Common",
       "apiPathsKey": "common",
@@ -243,6 +257,7 @@ export const SERVICE_BOUNDARY_BASE_PATHS = {
   "auth": "/api/auth",
   "common": "/api/common",
   "integration": "/api/integration",
+  "projectCopilot": "/api/project-copilot",
   "test": "/api/test",
   "user": "/api/users"
 } as const
@@ -260,6 +275,7 @@ export const SERVICE_BOUNDARY_ROUTE_PATHS = {
     "uploadImage": "/api/common/upload/image",
     "uploadWangEditor": "/api/common/upload/wangeditor"
   },
+  "projectCopilot": {},
   "test": {
     "bizException": "/api/test/exception/biz",
     "features": "/api/test/features",

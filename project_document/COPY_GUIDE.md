@@ -5,7 +5,7 @@
 ## 1. 复制目录
 
 ```bash
-cp -r infra-dev-scaffolding my-new-project
+cp -r agent-project-copilot my-new-project
 cd my-new-project
 ```
 

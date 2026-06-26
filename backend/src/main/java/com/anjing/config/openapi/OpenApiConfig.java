@@ -22,7 +22,7 @@ public class OpenApiConfig {
     public OpenAPI anjingOpenApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Anjing Infra Dev Scaffolding API")
+                        .title("Anjing Agent Project Copilot API")
                         .version("1.0.0")
                         .description("Runtime API contract for frontend typing, AI code generation, and service integration."))
                 .servers(List.of(new Server()

@@ -46,6 +46,7 @@ export const ApiPaths = {
     itemDetail: (id: string | number) =>
       bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.test.itemDetail, { id })
   },
+  projectCopilot: {},
   common: {
     upload: SERVICE_BOUNDARY_ROUTE_PATHS.common.upload,
     uploadImage: SERVICE_BOUNDARY_ROUTE_PATHS.common.uploadImage,

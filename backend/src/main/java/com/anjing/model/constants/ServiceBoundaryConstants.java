@@ -7,9 +7,9 @@ package com.anjing.model.constants;
 public final class ServiceBoundaryConstants {
 
     public static final int SCHEMA_VERSION = 1;
-    public static final String APPLICATION_ID = "infra-dev-scaffolding";
+    public static final String APPLICATION_ID = "agent-project-copilot";
     public static final String API_PREFIX = "/api";
-    public static final String[] BOUNDARY_IDS = { "auth", "test", "common", "user", "admin", "integration" };
+    public static final String[] BOUNDARY_IDS = { "auth", "test", "project-copilot", "common", "user", "admin", "integration" };
 
     private ServiceBoundaryConstants() {
     }
@@ -19,7 +19,7 @@ public final class ServiceBoundaryConstants {
         public static final String NAME = "Authentication";
         public static final String KIND = "runtime";
         public static final String OWNER = "infra-auth";
-        public static final String CURRENT_HOST = "infra-dev-scaffolding";
+        public static final String CURRENT_HOST = "agent-project-copilot";
         public static final String BASE_PATH = "/api/auth";
         public static final String API_CONSTANTS_CLASS = "Auth";
         public static final String API_PATHS_KEY = "auth";
@@ -35,8 +35,8 @@ public final class ServiceBoundaryConstants {
         public static final String ID = "test";
         public static final String NAME = "Scaffold Test";
         public static final String KIND = "sample";
-        public static final String OWNER = "infra-dev-scaffolding";
-        public static final String CURRENT_HOST = "infra-dev-scaffolding";
+        public static final String OWNER = "agent-project-copilot";
+        public static final String CURRENT_HOST = "agent-project-copilot";
         public static final String BASE_PATH = "/api/test";
         public static final String API_CONSTANTS_CLASS = "Test";
         public static final String API_PATHS_KEY = "test";
@@ -48,12 +48,29 @@ public final class ServiceBoundaryConstants {
         }
     }
 
+    public static final class ProjectCopilot {
+        public static final String ID = "project-copilot";
+        public static final String NAME = "Project Delivery Copilot";
+        public static final String KIND = "runtime";
+        public static final String OWNER = "agent-project-copilot";
+        public static final String CURRENT_HOST = "agent-project-copilot";
+        public static final String BASE_PATH = "/api/project-copilot";
+        public static final String API_CONSTANTS_CLASS = "ProjectCopilot";
+        public static final String API_PATHS_KEY = "projectCopilot";
+        public static final boolean OPENAPI = true;
+        public static final String COPY_ACTION = "keep as the teaching runtime boundary for project delivery collaboration agent APIs";
+        public static final String[] ROUTES = {};
+
+        private ProjectCopilot() {
+        }
+    }
+
     public static final class Common {
         public static final String ID = "common";
         public static final String NAME = "Common Platform";
         public static final String KIND = "reserved-runtime";
         public static final String OWNER = "infra-common";
-        public static final String CURRENT_HOST = "infra-dev-scaffolding";
+        public static final String CURRENT_HOST = "agent-project-copilot";
         public static final String BASE_PATH = "/api/common";
         public static final String API_CONSTANTS_CLASS = "Common";
         public static final String API_PATHS_KEY = "common";

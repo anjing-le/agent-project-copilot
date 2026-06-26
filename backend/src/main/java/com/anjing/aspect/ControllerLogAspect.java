@@ -47,9 +47,9 @@ public class ControllerLogAspect
     private final ThreadLocal<RequestContext> requestContextHolder = new ThreadLocal<>();
 
     /**
-     * 定义切点：Controller包下的所有方法
+     * 定义切点：com.anjing 下 controller 包的所有方法
      */
-    @Pointcut("execution(public * com.anjing.controller..*.*(..))")
+    @Pointcut("execution(public * com.anjing..controller..*.*(..))")
     public void controllerMethod() {}
 
     /**

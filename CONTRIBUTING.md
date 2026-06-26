@@ -1,6 +1,6 @@
 # Contributing
 
-感谢你改进 `infra-dev-scaffolding`。
+感谢你改进 `agent-project-copilot`。
 
 这个仓库是 Anjing 开源项目的工程母版。贡献时请优先保持它可复制、可验证、可被 AI 协作工具理解。
 

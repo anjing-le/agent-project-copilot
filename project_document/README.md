@@ -1,6 +1,6 @@
 # Project Document
 
-本目录存放 `infra-dev-scaffolding` 的定位、规划、验收标准和进度记录。
+本目录存放 `agent-project-copilot` 的定位、规划、验收标准和进度记录。
 
 ## 文档
 

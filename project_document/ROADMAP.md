@@ -2,7 +2,7 @@
 
 ## 定位
 
-`infra-dev-scaffolding` 是 Anjing 开源项目的工程母版。
+`agent-project-copilot` 是 Anjing 开源项目的工程母版。
 
 它提供一个可启动、可演示、可复制、可被 AI 协作工具理解的全栈基础工程。后续 `agent-aigc`、`agent-customer-service`、`agent-knowledge` 以及 `infra-auth`、`infra-api-gateway`、`infra-llm-gateway`、`infra-skill-hub` 都应从这套工程结构继承或裁剪。
 

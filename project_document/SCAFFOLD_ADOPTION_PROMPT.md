@@ -1,6 +1,6 @@
 # Scaffold Adoption Prompt
 
-本文档提供一段可复制给 Codex / Cursor / 其他 AI 编程助手的接入提示词，用于让旧项目按 `infra-dev-scaffolding` 的工程母版逐步重构，或让新项目初始化时直接继承本母版的边界、契约和质量门禁。
+本文档提供一段可复制给 Codex / Cursor / 其他 AI 编程助手的接入提示词，用于让旧项目按 `agent-project-copilot` 的工程母版逐步重构，或让新项目初始化时直接继承本母版的边界、契约和质量门禁。
 
 ## 使用方式
 
@@ -15,7 +15,7 @@
 你是一个资深全栈工程协作者。请基于 Anjing 工程母版重构或初始化当前项目。
 
 母版仓库：
-https://github.com/anjing-le/infra-dev-scaffolding
+https://github.com/anjing-le/agent-project-copilot
 
 目标：
 - 让当前项目逐步对齐 Anjing 的全栈工程母版。
@@ -45,7 +45,7 @@ https://github.com/anjing-le/infra-dev-scaffolding
 
 工作方式：
 1. 先审计当前项目结构、启动方式、前后端技术栈、API 层、响应结构、路由、环境变量、文档和质量脚本。
-2. 对照 infra-dev-scaffolding，列出差距：能直接复用的、需要迁移的、应该保留的、应该删除的。
+2. 对照 agent-project-copilot，列出差距：能直接复用的、需要迁移的、应该保留的、应该删除的。
 3. 给出分阶段迁移计划。每个阶段必须能独立验证，不要一次性重构所有模块。
 4. 优先落地工程契约，再迁移业务页面：
    - 统一 API 路径管理。

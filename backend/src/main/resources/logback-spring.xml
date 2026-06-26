@@ -4,12 +4,12 @@
     <springProfile name="!prod">
         <!-- 日志输出到 backend/logs 目录 -->
         <property name="LOG_PATH" value="logs"/>
-        <property name="APP_NAME" value="infra-dev-scaffolding"/>
+        <property name="APP_NAME" value="agent-project-copilot"/>
     </springProfile>
     
     <springProfile name="prod">
-        <property name="LOG_PATH" value="/var/log/infra-dev-scaffolding"/>
-        <property name="APP_NAME" value="infra-dev-scaffolding"/>
+        <property name="LOG_PATH" value="/var/log/agent-project-copilot"/>
+        <property name="APP_NAME" value="agent-project-copilot"/>
     </springProfile>
 
     <!-- 彩色日志格式 -->

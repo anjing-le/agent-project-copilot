@@ -2,7 +2,7 @@
 
 更新时间：2026-06-07
 
-本文记录 `infra-dev-scaffolding` 当前作为 Anjing 开源工程母版的阶段状态和可验证证据。
+本文记录 `agent-project-copilot` 当前作为 Anjing 开源工程母版的阶段状态和可验证证据。
 
 ## 阶段状态
 
@@ -83,7 +83,7 @@ AI 协作验证：
   - 前端标准响应消息使用 `message`，`msg` 兼容集中在 `utils/http/response.ts`。
   - API envelope 契约记录在 `project_document/API_CONTRACT_GUIDE.md`。
   - OpenAPI 运行接口契约记录在 `project_document/OPENAPI_CONTRACT_GUIDE.md`；后端通过 `springdoc-openapi-starter-webmvc-api` 暴露 `/v3/api-docs`，dev/test 默认开启，prod 默认关闭并可通过 `OPENAPI_API_DOCS_ENABLED=true` 显式开启。
-  - `OpenApiConfig` 已限制 OpenAPI 只扫描 `com.anjing.controller` 和 `/api/**`，并给每个 operation 补充 requestId、traceId、tenantId、userId、userName、userRoles、callerId、timeZone、language 等平台请求头。
+  - `OpenApiConfig` 已限制 OpenAPI 扫描 `com.anjing` 下 `/api/**` 运行接口，并给每个 operation 补充 requestId、traceId、tenantId、userId、userName、userRoles、callerId、timeZone、language 等平台请求头。
   - `node scripts/generate-openapi-frontend-types.js` 已从真实 OpenAPI JSON 生成 `frontend/src/contracts/openapi/schemas.ts` 和 `frontend/src/contracts/openapi/operations.ts`，operation 类型已包含 `OpenApiOperationPathParams` 和 `OpenApiOperationQuery`；`frontend/src/api/model/authModel.ts` 已从生成的 `OpenApiOperationRequest<'login'>`、`OpenApiOperationData<'login'>`、`OpenApiOperationData<'getCurrentUser'>` 和 `OpenApiOperationRequest<'refreshToken'>` 派生类型，`frontend/src/api/openapiClient.ts` 已通过 `OPENAPI_OPERATIONS` 提供 `openApiRequest` typed 调用入口，`frontend/src/api/auth.ts` 已迁移到 `operationId` 调用。
   - `node scripts/check-openapi-runtime-contract.js` 已读取真实 OpenAPI JSON、`contracts/service-boundaries.json` 和 `contracts/platform-contract.json`，校验 openapi 运行 route/method 全量存在，并由 `./scripts/probe-backend-dev.sh` 自动执行；`probe-backend-dev.sh` 同时执行 `node scripts/generate-openapi-frontend-types.js <openapi.json> --check` 防止前端生成 schema / operation 类型过期。
   - `AuthController` 已将登录、当前用户和刷新 Token 的运行 payload 从 `Map` 收敛为 `LoginRequest`、`RefreshTokenRequest`、`AuthTokenResponse` 和 `CurrentUserResponse`，前端 `authModel.ts` 与全局 `Api.Auth` 类型已同步。

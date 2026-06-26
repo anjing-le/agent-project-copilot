@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SMOKE_NAME="${1:-anjing-copy-smoke}"
 TMP_ROOT="${TMPDIR:-/tmp}"
-WORK_DIR="$(mktemp -d "$TMP_ROOT/infra-dev-scaffolding-copy-smoke.XXXXXX")"
+WORK_DIR="$(mktemp -d "$TMP_ROOT/agent-project-copilot-copy-smoke.XXXXXX")"
 COPY_DIR="$WORK_DIR/$SMOKE_NAME"
 
 fail() {
@@ -89,9 +89,9 @@ walk('.', (file) => {
   const original = read(file)
   let next = original
   next = replaceAll(next, previousName, projectName)
-  next = replaceAll(next, 'infra-dev-scaffolding', projectName)
-  next = replaceAll(next, 'Infra Dev Scaffolding', projectName)
-  next = replaceAll(next, 'infra_dev_scaffolding', dbName)
+  next = replaceAll(next, 'agent-project-copilot', projectName)
+  next = replaceAll(next, 'Agent Project Copilot', projectName)
+  next = replaceAll(next, 'agent_project_copilot', dbName)
   if (next !== original) write(file, next)
 })
 
@@ -128,7 +128,7 @@ NODE
 
 ./scripts/check-template.sh
 
-if rg -n 'infra-dev-scaffolding|agent-dev-scaffolding|apifoxmock|6400575|6097373|Daymychen/art-design-pro' \
+if rg -n 'agent-project-copilot|agent-dev-scaffolding|apifoxmock|6400575|6097373|Daymychen/art-design-pro' \
   README.md CONTRIBUTING.md project_document backend frontend \
   --glob '!frontend/node_modules/**' \
   --glob '!frontend/dist/**' \
@@ -137,7 +137,7 @@ then
   fail "copied project still contains stale identity or mock endpoint"
 fi
 
-if rg -n 'Agent Dev Scaffolding|Art Design Pro|UnoCSS|infra-dev-scaffolding|agent-dev-scaffolding|apifoxmock|6400575|6097373|Daymychen/art-design-pro' \
+if rg -n 'Agent Dev Scaffolding|Art Design Pro|UnoCSS|agent-project-copilot|agent-dev-scaffolding|apifoxmock|6400575|6097373|Daymychen/art-design-pro' \
   frontend/.cursor backend/.cursor project_document/AI_ASSETS.md --hidden
 then
   fail "copied project still contains stale Cursor identity or deprecated frontend stack"

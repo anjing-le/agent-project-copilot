@@ -69,6 +69,16 @@ public class ApiConstants {
     }
 
     /**
+     * 项目交付协作 Agent 教学模块
+     */
+    public static class ProjectCopilot {
+        public static final String BASE = API_PREFIX + "/project-copilot";
+
+        private ProjectCopilot() {
+        }
+    }
+
+    /**
      * 🎯 用户业务模块
      * 
      * 核心功能：用户注册、登录、信息管理、权限控制

@@ -1,16 +1,16 @@
-# Infra Dev Scaffolding 配置文件
-# Anjing 开源项目工程母版 - 条件化配置版本
+# Agent Project Copilot 配置文件
+# Anjing 项目交付协作 Agent 教学项目 - 条件化配置版本
 
 # 基础配置
 server:
-  port: 18080
+  port: 18090
   shutdown: graceful
   servlet:
     context-path: /
 
 spring:
   application:
-    name: infra-dev-scaffolding
+    name: agent-project-copilot
 
   autoconfigure:
     exclude:
@@ -22,7 +22,7 @@ spring:
   
   # 数据源配置
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/anjing?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true}
+    url: ${DB_URL:jdbc:mysql://localhost:3306/agent_project_copilot?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:your_password_here}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -183,7 +183,7 @@ springdoc:
   api-docs:
     enabled: ${OPENAPI_API_DOCS_ENABLED:true}
     path: /v3/api-docs
-  packages-to-scan: com.anjing.controller
+  packages-to-scan: com.anjing
   paths-to-match: /api/**
 
 # 🎛️ 功能特性配置 - 条件化启用各种功能
@@ -200,7 +200,7 @@ app:
 
   # 远程 HTTP 调用默认配置：用于未来服务间调用或外部 API 适配
   remote-http:
-    default-caller-id: ${APP_REMOTE_CALLER_ID:infra-dev-scaffolding}
+    default-caller-id: ${APP_REMOTE_CALLER_ID:agent-project-copilot}
     connect-timeout-ms: ${REMOTE_HTTP_CONNECT_TIMEOUT_MS:3000}
     read-timeout-ms: ${REMOTE_HTTP_READ_TIMEOUT_MS:5000}
     default-retry-count: ${REMOTE_HTTP_DEFAULT_RETRY_COUNT:0}
@@ -211,7 +211,7 @@ app:
       allowed-caller-ids: ${REMOTE_HTTP_POLICY_ALLOWED_CALLER_IDS:}
       allowed-caller-ids-by-service: {}
     service-base-urls:
-      infra-dev-scaffolding: ${APP_SELF_BASE_URL:http://localhost:18080}
+      agent-project-copilot: ${APP_SELF_BASE_URL:http://localhost:18090}
       infra-auth: ${INFRA_AUTH_BASE_URL:}
       infra-api-gateway: ${INFRA_API_GATEWAY_BASE_URL:}
       infra-skill-hub: ${INFRA_SKILL_HUB_BASE_URL:}
@@ -252,7 +252,7 @@ app:
       kafka:
         enabled: false                # 是否启用Kafka
         bootstrap-servers: localhost:9092
-        group-id: infra-dev-scaffolding
+        group-id: agent-project-copilot
       
       # MinIO对象存储
       minio:

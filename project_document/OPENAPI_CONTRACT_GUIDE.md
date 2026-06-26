@@ -27,7 +27,7 @@ OPENAPI_API_DOCS_ENABLED=true
 `backend/src/main/java/com/anjing/config/openapi/OpenApiConfig.java` 负责：
 
 - 只匹配 `PlatformContractConstants.API_PREFIX + "/**"`。
-- 只扫描 `com.anjing.controller`。
+- 扫描 `com.anjing` 下的运行接口包，业务模块可以按独立 package 组织 controller。
 - 给每个 operation 补充 requestId、traceId、tenantId、callerId、timeZone、language 等平台请求头。
 
 ## DTO / VO Rules
@@ -100,7 +100,7 @@ node scripts/check-openapi-runtime-contract.js /path/to/openapi.json
 
 该脚本读取 `contracts/service-boundaries.json` 和 `contracts/platform-contract.json`，校验所有 `openapi=true` 的 route/method 都出现在 OpenAPI 中，并校验每个 operation 都包含平台请求头。`./scripts/probe-backend-dev.sh` 会自动调用它，并同步调用 `generate-openapi-frontend-types.js --check` 防止前端生成 schema 过期。
 
-完整母版检查：
+完整项目检查：
 
 ```bash
 ./scripts/check-contracts.sh

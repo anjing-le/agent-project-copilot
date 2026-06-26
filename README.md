@@ -1,20 +1,22 @@
-# infra-dev-scaffolding
+# agent-project-copilot
 
-Anjing 全栈工程母版：能启动，能复制，能被 AI 接手。
+Anjing 协作型 Agent 教学项目：面向项目交付团队，展示 Agent 如何辅助任务拆解、会议纪要、风险识别、进度跟踪、周报生成、行动项追踪和团队协同边界。
 
-它把前端、后端、契约、约束和质量门禁放在一起，让新项目从第一天就有清晰边界。
+项目基于 Anjing 全栈工程母版重构，保留前后端、契约、约束和质量门禁的一体化工程习惯，让教学业务能启动、能演示、能被 AI 接手继续迭代。
 
 `Vue 3.5` · `TypeScript` · `Vite 7` · `Spring Boot 3.4.5` · `Java 17` · `OpenAPI` · `H2 / MySQL`
 
-## 它解决什么
+## 它展示什么
 
-| 场景 | 提供 |
+| 模块 | 教学重点 |
 | --- | --- |
-| 快速开始 | 一套可运行的 Vue + Spring Boot 基线 |
-| 复制新项目 | 改名、换端口、换业务模块的迁移路径 |
-| AI 协作 | 可复制给 Codex 的接入提示词和项目约束 |
-| 持续迭代 | API、时间、上下文、UI、服务边界等统一规则 |
-| 避免漂移 | 本地脚本和 CI 模板复用同一套质量门禁 |
+| 项目空间 | 项目目标、阶段、成员和交付节奏如何被 Agent 组织 |
+| 任务拆解 | 从目标到里程碑、任务、依赖和验收口径 |
+| 会议纪要 | 把会议输入沉淀成决议、风险和行动项 |
+| 风险雷达 | 识别影响、概率、状态和责任边界 |
+| 周报生成 | 将进度、风险、阻塞和下一步汇总为可交付周报 |
+| 行动项看板 | 跟踪 owner、截止时间、状态和逾期提醒 |
+| 协作历史 | 记录 Agent 建议、人类确认和团队交接痕迹 |
 
 ## 快速开始
 
@@ -26,7 +28,7 @@ pnpm install
 pnpm dev
 ```
 
-打开 `http://localhost:13006`。
+打开 `http://localhost:13016`。
 
 后端：
 
@@ -35,7 +37,7 @@ cd backend
 mvn spring-boot:run
 ```
 
-后端端口是 `18080`。默认 dev profile 使用 H2，本地不需要 MySQL、Redis 或其他中间件。
+后端端口是 `18090`。默认 dev profile 使用 H2，本地不需要 MySQL、Redis 或其他中间件。
 
 ## 技术栈
 
@@ -46,18 +48,18 @@ mvn spring-boot:run
 | Backend | Spring Boot 3.4.5, Java 17, Maven |
 | Data | H2 for dev/test, MySQL-ready |
 | Contract | OpenAPI, generated types, API path checks |
-| Governance | Shell/Node scripts, scaffold constraints, CI template |
+| Governance | Shell/Node scripts, project constraints, CI template |
 
 ## 使用入口
 
 | 想做什么 | 看这里 |
 | --- | --- |
-| 复制成新项目 | [COPY_GUIDE.md](./project_document/COPY_GUIDE.md) |
-| 让 Codex 接手 | [SCAFFOLD_ADOPTION_PROMPT.md](./project_document/SCAFFOLD_ADOPTION_PROMPT.md) |
-| 理解项目约束 | [PROJECT_CONSTRAINTS.md](./project_document/PROJECT_CONSTRAINTS.md) |
+| 理解协作 Agent 边界 | [PROJECT_CONSTRAINTS.md](./project_document/PROJECT_CONSTRAINTS.md) |
 | 新增业务模块 | [NEW_MODULE_GUIDE.md](./project_document/NEW_MODULE_GUIDE.md) |
+| 查看演示证据 | [DEMO_EVIDENCE.md](./project_document/DEMO_EVIDENCE.md) |
 | 调整界面风格 | [UI_DESIGN_GUIDE.md](./project_document/UI_DESIGN_GUIDE.md) |
-| 发布前检查 | [DEMO_EVIDENCE.md](./project_document/DEMO_EVIDENCE.md) |
+| 让 Codex 接手 | [SCAFFOLD_ADOPTION_PROMPT.md](./project_document/SCAFFOLD_ADOPTION_PROMPT.md) |
+| 复制成新项目 | [COPY_GUIDE.md](./project_document/COPY_GUIDE.md) |
 
 ## 质量门禁
 

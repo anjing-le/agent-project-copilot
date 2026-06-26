@@ -33,9 +33,9 @@
 
 | boundary | basePath | owner | 当前宿主 | 说明 |
 |----------|----------|-------|----------|------|
-| `auth` | `/api/auth` | `infra-auth` | `infra-dev-scaffolding` | Mock 认证接口，未来可迁到认证中心 |
-| `test` | `/api/test` | `infra-dev-scaffolding` | `infra-dev-scaffolding` | 示例、自检、OpenAPI smoke |
-| `common` | `/api/common` | `infra-common` | `infra-dev-scaffolding` | 上传、下载等平台通用路径预留 |
+| `auth` | `/api/auth` | `infra-auth` | `agent-project-copilot` | Mock 认证接口，未来可迁到认证中心 |
+| `test` | `/api/test` | `agent-project-copilot` | `agent-project-copilot` | 示例、自检、OpenAPI smoke |
+| `common` | `/api/common` | `infra-common` | `agent-project-copilot` | 上传、下载等平台通用路径预留 |
 | `user` | `/api/users` | `infra-auth` | `future-service` | 用户管理预留 |
 | `admin` | `/api/admin` | `infra-admin` | `future-service` | 运维管理预留 |
 | `integration` | `/api/integration` | `infra-integration` | `future-service` | 外部系统集成预留 |

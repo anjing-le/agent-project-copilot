@@ -11,7 +11,7 @@
 ## 发布前证据清单
 
 1. 运行 `./scripts/quality-gate.sh` 并保留通过的提交号。
-2. 打开 `http://localhost:13006`，保留登录页桌面截图和移动端截图。
+2. 打开 `http://localhost:13016`，保留登录页桌面截图和移动端截图。
 3. 登录或游客进入工作台，保留首页截图。
 4. 启动后端 dev profile，记录 `/api/test/health`、`/api/test/features`、`/v3/api-docs` 可访问。
 5. 如演示 MySQL profile，记录使用的 `.env` 模板字段，不记录真实密码。
@@ -33,8 +33,8 @@ docs/evidence/YYYY-MM-DD/
 # Evidence YYYY-MM-DD
 
 - Commit: `<commit>`
-- Frontend: `http://localhost:13006`
-- Backend: `http://localhost:18080`
+- Frontend: `http://localhost:13016`
+- Backend: `http://localhost:18090`
 - Gate: `./scripts/quality-gate.sh`
 - Result: passed
 ```

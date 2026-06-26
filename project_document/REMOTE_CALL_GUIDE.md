@@ -55,7 +55,7 @@ APIResponse<CurrentUserResponse> response = remoteHttpClient.exchange(
 ```yaml
 app:
   remote-http:
-    default-caller-id: infra-dev-scaffolding
+    default-caller-id: agent-project-copilot
     connect-timeout-ms: 3000
     read-timeout-ms: 5000
     default-retry-count: 0
@@ -68,7 +68,7 @@ app:
         infra-auth:
           - infra-api-gateway
     service-base-urls:
-      infra-dev-scaffolding: http://localhost:18080
+      agent-project-copilot: http://localhost:18090
       infra-auth: ${INFRA_AUTH_BASE_URL:}
 ```
 
