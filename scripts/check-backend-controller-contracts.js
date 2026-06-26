@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 const root = path.resolve(__dirname, '..')
-const controllerDir = path.join(root, 'backend/src/main/java/com/anjing/controller')
+const controllerRoot = path.join(root, 'backend/src/main/java/com/anjing')
 
 function fail(message) {
   console.error(`check-backend-controller-contracts: ${message}`)
@@ -15,12 +15,24 @@ function relative(file) {
 }
 
 function controllerFiles() {
-  if (!fs.existsSync(controllerDir)) {
-    fail('missing backend controller directory')
+  if (!fs.existsSync(controllerRoot)) {
+    fail('missing backend java source directory')
   }
-  return fs.readdirSync(controllerDir)
-    .filter((name) => name.endsWith('Controller.java'))
-    .map((name) => path.join(controllerDir, name))
+
+  const files = []
+  function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const current = path.join(dir, entry.name)
+      if (entry.isDirectory()) {
+        walk(current)
+      } else if (entry.isFile() && entry.name.endsWith('Controller.java')) {
+        files.push(current)
+      }
+    }
+  }
+
+  walk(controllerRoot)
+  return files.sort()
 }
 
 function findMappingMethodSignature(lines, mappingLineIndex) {

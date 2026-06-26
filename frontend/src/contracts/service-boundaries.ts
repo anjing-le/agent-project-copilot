@@ -151,7 +151,127 @@ export const SERVICE_BOUNDARY_CONTRACT = {
       "controller": "backend/src/main/java/com/anjing/projectcopilot/controller/ProjectCopilotController.java",
       "openapi": true,
       "copyAction": "keep as the teaching runtime boundary for project delivery collaboration agent APIs",
-      "routes": []
+      "routes": [
+        {
+          "name": "overview",
+          "backendConstant": "OVERVIEW_FULL",
+          "frontendKey": "overview",
+          "path": "/api/project-copilot/overview",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "spaces",
+          "backendConstant": "SPACES_FULL",
+          "frontendKey": "spaces",
+          "path": "/api/project-copilot/spaces",
+          "methods": [
+            "GET",
+            "POST"
+          ]
+        },
+        {
+          "name": "spaceDetail",
+          "backendConstant": "SPACE_DETAIL_FULL",
+          "frontendKey": "spaceDetail",
+          "path": "/api/project-copilot/spaces/{spaceId}",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "taskBreakdown",
+          "backendConstant": "TASK_BREAKDOWN_FULL",
+          "frontendKey": "taskBreakdown",
+          "path": "/api/project-copilot/spaces/{spaceId}/task-breakdown",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "generateTaskBreakdown",
+          "backendConstant": "TASK_BREAKDOWN_GENERATE_FULL",
+          "frontendKey": "generateTaskBreakdown",
+          "path": "/api/project-copilot/spaces/{spaceId}/task-breakdown/generate",
+          "methods": [
+            "POST"
+          ]
+        },
+        {
+          "name": "meetings",
+          "backendConstant": "MEETINGS_FULL",
+          "frontendKey": "meetings",
+          "path": "/api/project-copilot/spaces/{spaceId}/meetings",
+          "methods": [
+            "GET",
+            "POST"
+          ]
+        },
+        {
+          "name": "risks",
+          "backendConstant": "RISKS_FULL",
+          "frontendKey": "risks",
+          "path": "/api/project-copilot/spaces/{spaceId}/risks",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "riskDetail",
+          "backendConstant": "RISK_DETAIL_FULL",
+          "frontendKey": "riskDetail",
+          "path": "/api/project-copilot/spaces/{spaceId}/risks/{riskId}",
+          "methods": [
+            "PATCH"
+          ]
+        },
+        {
+          "name": "weeklyReports",
+          "backendConstant": "WEEKLY_REPORTS_FULL",
+          "frontendKey": "weeklyReports",
+          "path": "/api/project-copilot/spaces/{spaceId}/weekly-reports",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "generateWeeklyReport",
+          "backendConstant": "WEEKLY_REPORT_GENERATE_FULL",
+          "frontendKey": "generateWeeklyReport",
+          "path": "/api/project-copilot/spaces/{spaceId}/weekly-reports/generate",
+          "methods": [
+            "POST"
+          ]
+        },
+        {
+          "name": "actionItems",
+          "backendConstant": "ACTION_ITEMS_FULL",
+          "frontendKey": "actionItems",
+          "path": "/api/project-copilot/spaces/{spaceId}/action-items",
+          "methods": [
+            "GET"
+          ]
+        },
+        {
+          "name": "actionItemDetail",
+          "backendConstant": "ACTION_ITEM_DETAIL_FULL",
+          "frontendKey": "actionItemDetail",
+          "path": "/api/project-copilot/spaces/{spaceId}/action-items/{actionItemId}",
+          "methods": [
+            "PATCH"
+          ]
+        },
+        {
+          "name": "collaborationHistory",
+          "backendConstant": "COLLABORATION_HISTORY_FULL",
+          "frontendKey": "collaborationHistory",
+          "path": "/api/project-copilot/spaces/{spaceId}/collaboration-history",
+          "methods": [
+            "GET"
+          ]
+        }
+      ]
     },
     {
       "id": "common",
@@ -275,7 +395,21 @@ export const SERVICE_BOUNDARY_ROUTE_PATHS = {
     "uploadImage": "/api/common/upload/image",
     "uploadWangEditor": "/api/common/upload/wangeditor"
   },
-  "projectCopilot": {},
+  "projectCopilot": {
+    "actionItemDetail": "/api/project-copilot/spaces/{spaceId}/action-items/{actionItemId}",
+    "actionItems": "/api/project-copilot/spaces/{spaceId}/action-items",
+    "collaborationHistory": "/api/project-copilot/spaces/{spaceId}/collaboration-history",
+    "generateTaskBreakdown": "/api/project-copilot/spaces/{spaceId}/task-breakdown/generate",
+    "generateWeeklyReport": "/api/project-copilot/spaces/{spaceId}/weekly-reports/generate",
+    "meetings": "/api/project-copilot/spaces/{spaceId}/meetings",
+    "overview": "/api/project-copilot/overview",
+    "riskDetail": "/api/project-copilot/spaces/{spaceId}/risks/{riskId}",
+    "risks": "/api/project-copilot/spaces/{spaceId}/risks",
+    "spaceDetail": "/api/project-copilot/spaces/{spaceId}",
+    "spaces": "/api/project-copilot/spaces",
+    "taskBreakdown": "/api/project-copilot/spaces/{spaceId}/task-breakdown",
+    "weeklyReports": "/api/project-copilot/spaces/{spaceId}/weekly-reports"
+  },
   "test": {
     "bizException": "/api/test/exception/biz",
     "features": "/api/test/features",

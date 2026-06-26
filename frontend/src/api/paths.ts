@@ -46,7 +46,35 @@ export const ApiPaths = {
     itemDetail: (id: string | number) =>
       bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.test.itemDetail, { id })
   },
-  projectCopilot: {},
+  projectCopilot: {
+    overview: SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.overview,
+    spaces: SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.spaces,
+    spaceDetail: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.spaceDetail, { spaceId }),
+    taskBreakdown: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.taskBreakdown, { spaceId }),
+    generateTaskBreakdown: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.generateTaskBreakdown, { spaceId }),
+    meetings: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.meetings, { spaceId }),
+    risks: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.risks, { spaceId }),
+    riskDetail: (spaceId: string | number, riskId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.riskDetail, { spaceId, riskId }),
+    weeklyReports: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.weeklyReports, { spaceId }),
+    generateWeeklyReport: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.generateWeeklyReport, { spaceId }),
+    actionItems: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.actionItems, { spaceId }),
+    actionItemDetail: (spaceId: string | number, actionItemId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.actionItemDetail, {
+        spaceId,
+        actionItemId
+      }),
+    collaborationHistory: (spaceId: string | number) =>
+      bindApiPathParams(SERVICE_BOUNDARY_ROUTE_PATHS.projectCopilot.collaborationHistory, { spaceId })
+  },
   common: {
     upload: SERVICE_BOUNDARY_ROUTE_PATHS.common.upload,
     uploadImage: SERVICE_BOUNDARY_ROUTE_PATHS.common.uploadImage,

@@ -74,6 +74,34 @@ public class ApiConstants {
     public static class ProjectCopilot {
         public static final String BASE = API_PREFIX + "/project-copilot";
 
+        public static final String OVERVIEW = "/overview";
+        public static final String SPACES = "/spaces";
+        public static final String SPACE_DETAIL = "/spaces/{spaceId}";
+        public static final String TASK_BREAKDOWN = "/spaces/{spaceId}/task-breakdown";
+        public static final String TASK_BREAKDOWN_GENERATE = "/spaces/{spaceId}/task-breakdown/generate";
+        public static final String MEETINGS = "/spaces/{spaceId}/meetings";
+        public static final String RISKS = "/spaces/{spaceId}/risks";
+        public static final String RISK_DETAIL = "/spaces/{spaceId}/risks/{riskId}";
+        public static final String WEEKLY_REPORTS = "/spaces/{spaceId}/weekly-reports";
+        public static final String WEEKLY_REPORT_GENERATE = "/spaces/{spaceId}/weekly-reports/generate";
+        public static final String ACTION_ITEMS = "/spaces/{spaceId}/action-items";
+        public static final String ACTION_ITEM_DETAIL = "/spaces/{spaceId}/action-items/{actionItemId}";
+        public static final String COLLABORATION_HISTORY = "/spaces/{spaceId}/collaboration-history";
+
+        public static final String OVERVIEW_FULL = BASE + OVERVIEW;
+        public static final String SPACES_FULL = BASE + SPACES;
+        public static final String SPACE_DETAIL_FULL = BASE + SPACE_DETAIL;
+        public static final String TASK_BREAKDOWN_FULL = BASE + TASK_BREAKDOWN;
+        public static final String TASK_BREAKDOWN_GENERATE_FULL = BASE + TASK_BREAKDOWN_GENERATE;
+        public static final String MEETINGS_FULL = BASE + MEETINGS;
+        public static final String RISKS_FULL = BASE + RISKS;
+        public static final String RISK_DETAIL_FULL = BASE + RISK_DETAIL;
+        public static final String WEEKLY_REPORTS_FULL = BASE + WEEKLY_REPORTS;
+        public static final String WEEKLY_REPORT_GENERATE_FULL = BASE + WEEKLY_REPORT_GENERATE;
+        public static final String ACTION_ITEMS_FULL = BASE + ACTION_ITEMS;
+        public static final String ACTION_ITEM_DETAIL_FULL = BASE + ACTION_ITEM_DETAIL;
+        public static final String COLLABORATION_HISTORY_FULL = BASE + COLLABORATION_HISTORY;
+
         private ProjectCopilot() {
         }
     }

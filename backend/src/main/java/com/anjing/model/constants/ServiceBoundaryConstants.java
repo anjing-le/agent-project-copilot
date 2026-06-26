@@ -59,7 +59,7 @@ public final class ServiceBoundaryConstants {
         public static final String API_PATHS_KEY = "projectCopilot";
         public static final boolean OPENAPI = true;
         public static final String COPY_ACTION = "keep as the teaching runtime boundary for project delivery collaboration agent APIs";
-        public static final String[] ROUTES = {};
+        public static final String[] ROUTES = { "overview", "spaces", "spaceDetail", "taskBreakdown", "generateTaskBreakdown", "meetings", "risks", "riskDetail", "weeklyReports", "generateWeeklyReport", "actionItems", "actionItemDetail", "collaborationHistory" };
 
         private ProjectCopilot() {
         }
