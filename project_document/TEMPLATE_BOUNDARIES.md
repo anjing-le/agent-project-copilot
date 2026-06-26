@@ -1,6 +1,6 @@
 # Template Boundaries
 
-本文档用于说明哪些内容属于工程母版，哪些内容只是演示或示例。复制为新项目时，先按这里判断保留、替换或删除。
+本文档用于说明哪些内容属于 Project Copilot 的工程基线，哪些内容只是演示或示例。复制为新项目时，先按这里判断保留、替换或删除。
 
 ## 母版能力
 
@@ -11,7 +11,7 @@
 - `frontend/src/store/`：用户、菜单、设置、标签页等基础状态。
 - `frontend/src/api/` 和 `frontend/src/types/`：API 分层、统一响应类型和业务模型位置。
 - `frontend/src/views/auth/`：登录、注册、忘记密码页面。实际项目可以替换实现，但保留路由结构。
-- `frontend/src/views/dashboard/console/`：默认工作台，也是游客模式落点。复制后可以替换页面内容。
+- `frontend/src/views/project-copilot/`：默认教学工作台，也是游客模式落点。复制后可以替换页面内容。
 - `frontend/src/views/result/`、`frontend/src/views/exception/`、`frontend/src/views/theme/`：通用体验页面。
 - `backend/src/main/java/com/anjing/config/`：Web、Jackson、JPA、Redis、锁、中间件和配置属性。
 - `backend/src/main/java/com/anjing/model/`：请求、响应、错误码、异常、校验和常量。
@@ -29,7 +29,7 @@
 
 - `backend/src/main/java/com/anjing/controller/TestController.java`：健康检查、异常处理、内存 CRUD 演示，使用 `@ScaffoldSample` 标记。
 - `backend/src/main/java/com/anjing/example/`：远程调用、校验、状态机使用示例，包上使用 `@ScaffoldSample` 标记。
-- `frontend/src/views/dashboard/console/modules/`：工作台展示数据和卡片内容。
+- `frontend/src/views/dashboard/console/modules/`：继承自脚手架的工作台展示示例，可在复制项目时删除或替换。
 - `frontend/src/mock/upgrade/changeLog.ts`：升级提示演示数据。
 
 复制为业务项目时，建议先保留这些示例跑通首轮验证，再按业务边界删除或替换。

@@ -2,7 +2,23 @@
 
 更新时间：2026-06-07
 
-本文记录 `agent-project-copilot` 当前作为 Anjing 开源工程母版的阶段状态和可验证证据。
+本文记录 `agent-project-copilot` 当前作为 Anjing 协作型 Agent 教学项目的阶段状态和可验证证据。
+
+业务更新时间：2026-06-26
+
+当前仓库已从工程母版重构为 Project Copilot 协作型 Agent 教学项目，同时保留脚手架的契约、OpenAPI、服务边界、质量门禁和复制治理能力。
+
+## Project Copilot 教学阶段
+
+| 阶段 | 状态 | 证据 |
+|------|------|------|
+| P0 项目身份重构 | Ready | README、端口、数据库名、应用名、OpenAPI 扫描包和 service boundary 已切换到 `agent-project-copilot` |
+| P1 协作领域建模 | Ready | 已落地项目空间、任务拆解、会议纪要、风险雷达、周报生成、行动项看板和协作历史的 DTO、Service、Controller 与路径契约 |
+| P2 前端教学工作台 | Ready | `/project-copilot/workbench` 已提供协作型 Agent 工作台，覆盖空间选择、指标、边界说明和七个业务模块标签页 |
+| P3 契约生成 | Ready | `/v3/api-docs` 已生成 Project Copilot operation 类型，前端 API model 从 OpenAPI operation 派生 |
+| P4 教学文档 | Ready | `project_document/PROJECT_COPILOT_TEACHING_GUIDE.md` 已记录演示路径、模块边界、Agent 协作边界和验收命令 |
+
+## 继承的工程基线
 
 ## 阶段状态
 

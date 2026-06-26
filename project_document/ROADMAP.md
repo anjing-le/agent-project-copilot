@@ -2,25 +2,57 @@
 
 ## 定位
 
-`agent-project-copilot` 是 Anjing 开源项目的工程母版。
+`agent-project-copilot` 是 Anjing 协作型 Agent 教学项目，面向项目交付场景展示 Agent 如何辅助团队推进工作。
 
-它提供一个可启动、可演示、可复制、可被 AI 协作工具理解的全栈基础工程。后续 `agent-aigc`、`agent-customer-service`、`agent-knowledge` 以及 `infra-auth`、`infra-api-gateway`、`infra-llm-gateway`、`infra-skill-hub` 都应从这套工程结构继承或裁剪。
+它继承 `infra-dev-scaffolding` 的技术栈、目录结构、脚本、文档习惯和质量门禁，在此基础上提供一个可启动、可演示、可复制、可被 AI 协作工具理解的 Project Copilot 工作台。
 
 ## 目标
 
-1. 开箱能跑：前端游客模式无后端可体验，后端示例 API 可启动和验证。
-2. 工程规范稳定：统一目录、类型、路由、权限、请求、响应、异常、日志和环境配置。
-3. 可复制：新项目能从本仓库复制并快速改名、换端口、换业务模块。
-4. 可被 AI 协作：Cursor Rules、Prompts 和接入提示词让 AI 生成或迁移代码时遵循本项目结构。
+1. 开箱能跑：前端进入 `/project-copilot/workbench` 可体验协作型 Agent 教学工作台，后端 Project Copilot API 可启动和验证。
+2. 业务完整：覆盖项目空间、任务拆解、会议纪要、风险雷达、周报生成、行动项看板和协作历史。
+3. 边界清楚：每个模块都说明 Agent 能建议什么、人类团队必须确认什么。
+4. 工程规范稳定：统一目录、类型、路由、权限、请求、响应、异常、日志和环境配置。
+5. 可复制：后续 Agent 项目能从本仓库复制并快速换业务模块。
+6. 可被 AI 协作：Cursor Rules、Prompts 和接入提示词让 AI 生成或迁移代码时遵循本项目结构。
 
 ## 非目标
 
-- 不做完整业务系统。
-- 不在底座中沉淀具体 Agent 业务逻辑。
+- 不做完整项目管理 SaaS。
+- 不接入真实 LLM 编排、企业 IM、工单系统或日历系统。
+- 不替代项目经理、研发负责人、质量负责人或业务 owner 的最终决策。
 - 不把认证中心、API 网关、LLM 网关、Skill Hub 的领域能力提前塞进本仓库。
-- 不追求功能越多越好，优先保持清晰、稳定、易复制。
+- 不追求功能越多越好，优先保持教学路径清晰、边界明确、易复制。
 
 ## 阶段规划
+
+### P0: Project Copilot 项目身份
+
+目标：把工程母版重构为协作型 Agent 教学项目。
+
+验收：
+- README、端口、数据库名、应用名、后端包扫描和前端入口都指向 `agent-project-copilot`。
+- service boundary manifest 声明 `project-copilot` 运行边界。
+- 质量门禁仍可运行。
+
+### P1: 协作 Agent 业务模块
+
+目标：用一组端到端模块表达项目交付协作链路。
+
+验收：
+- 后端提供项目空间、任务拆解、会议纪要、风险雷达、周报生成、行动项看板和协作历史 API。
+- 前端工作台覆盖七个模块，并能展示 Agent 建议和人工协作边界。
+- OpenAPI operation 类型和前端 API model 从真实运行接口生成。
+
+### P2: 教学与演示证据
+
+目标：让第一次打开项目的人知道如何演示、如何验收、如何解释团队协同边界。
+
+验收：
+- `project_document/PROJECT_COPILOT_TEACHING_GUIDE.md` 记录教学定位、演示路径、模块边界和协作边界。
+- `project_document/DEMO_EVIDENCE.md` 记录 Project Copilot 工作台截图和后端 probe 证据要求。
+- `project_document/LOCAL_STARTUP_GUIDE.md` 记录前后端本地启动和 `/api/project-copilot/overview` 验证命令。
+
+## 继承的工程基线
 
 ### S0: 构建与入口收口
 
@@ -30,7 +62,7 @@
 - `frontend` 通过 `pnpm build`。
 - `backend` 通过 `mvn -q -DskipTests package`。
 - `./scripts/quality-gate.sh` 串联母版质量门禁，后续可接入任意 CI。
-- 前端游客模式进入 `/dashboard/console`。
+- 前端游客模式进入 `/project-copilot/workbench`。
 - README 中的环境要求、端口、启动命令和验证命令准确。
 - 敏感配置只出现在模板或环境变量说明中。
 

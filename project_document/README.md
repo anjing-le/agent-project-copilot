@@ -5,6 +5,7 @@
 ## 文档
 
 - [ROADMAP.md](./ROADMAP.md)：项目定位、阶段规划、边界和成功标准。
+- [PROJECT_COPILOT_TEACHING_GUIDE.md](./PROJECT_COPILOT_TEACHING_GUIDE.md)：协作型 Agent 教学模块、演示路径和团队边界。
 - [PROJECT_CONSTRAINTS.md](./PROJECT_CONSTRAINTS.md)：项目长期约束、防破窗规则和脚本门禁清单。
 - [NEW_MODULE_GUIDE.md](./NEW_MODULE_GUIDE.md)：新增业务模块时的前后端契约、交付顺序和 AI Prompt 约束。
 - [SCAFFOLD_ADOPTION_PROMPT.md](./SCAFFOLD_ADOPTION_PROMPT.md)：把旧项目接入本母版时可复制给 Codex 的提示词。
@@ -24,7 +25,7 @@
 
 ## 维护原则
 
-- 所有规划要服务于“开源工程母版”这个目标。
+- 所有规划要服务于“协作型 Agent 教学项目”这个目标，同时继承开源工程母版的质量门禁。
 - 新增能力必须先对齐 [PROJECT_CONSTRAINTS.md](./PROJECT_CONSTRAINTS.md)。
 - 文档里的启动命令、端口、验证命令必须和当前代码一致。
-- 新增功能如果不能被后续 Agent / Infra 项目复用，应放到临时复制项目或独立示例仓库中，而不是污染底座。
+- 新增功能如果不能解释项目交付协作 Agent 的任务拆解、纪要、风险、进度、周报、行动项或团队边界，应放到临时复制项目或独立示例仓库中。

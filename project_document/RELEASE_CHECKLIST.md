@@ -38,7 +38,8 @@ mvn -q -DskipTests package
 
 - 登录页能正常打开。
 - 登录页符合 `project_document/UI_DESIGN_GUIDE.md` 的轻玻璃、虚线和少文字基线。
-- “游客访问”能进入 `/dashboard/console`。
+- “游客访问”能进入 `/project-copilot/workbench`。
+- Project Copilot 工作台能展示项目空间、任务拆解、会议纪要、风险雷达、周报生成、行动项看板和协作历史。
 - 游客菜单只展示允许游客访问的页面。
 - 主题切换、语言切换、响应式布局不出现明显破版。
 - 生产构建不出现 TypeScript 错误。
