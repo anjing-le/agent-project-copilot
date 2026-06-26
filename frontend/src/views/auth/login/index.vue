@@ -202,7 +202,7 @@
   const isClickPass = ref(false)
 
   const systemName = AppConfig.systemInfo.name
-  const defaultHomePath = '/dashboard/console'
+  const defaultHomePath = '/project-copilot/workbench'
   const formRef = ref<FormInstance>()
 
   const resolveLoginRedirect = (redirect?: string) => {
